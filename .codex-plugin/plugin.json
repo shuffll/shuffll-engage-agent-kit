@@ -2,10 +2,20 @@
   "name": "shuffll-engage",
   "version": "0.2.0",
   "description": "Authorized Shuffll Engage video campaigns, creative previews and results through its API and MCP.",
-  "author": { "name": "Shuffll", "email": "contact@shuffll.com", "url": "https://shuffll.com" },
+  "author": {
+    "name": "Shuffll",
+    "email": "contact@shuffll.com",
+    "url": "https://shuffll.com"
+  },
   "homepage": "https://engage.shuffll.com",
   "repository": "https://github.com/shuffll/shuffll-engage-agent-kit",
-  "keywords": ["video", "campaigns", "personalization", "mcp", "skills"],
+  "keywords": [
+    "video",
+    "campaigns",
+    "personalization",
+    "mcp",
+    "skills"
+  ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
@@ -14,7 +24,10 @@
     "longDescription": "Work with your authorized Shuffll Engage workspace through its API and MCP. Discover available capabilities, browse templates, prepare campaigns, use exposed creative journey and preview tools, and inspect generation jobs, results and analytics. Available tools depend on your subscription, enabled access and permissions. The bundled skill checks capabilities and supported inputs before acting. Legacy fixed-video campaigns do not personalize media from recipient fields. Generation and message delivery are separate actions. A paid subscription and authorized workspace access are required.",
     "developerName": "Shuffll",
     "category": "Productivity",
-    "capabilities": ["Read", "Write"],
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
     "websiteURL": "https://engage.shuffll.com",
     "privacyPolicyURL": "https://shuffll.com/privacy",
     "termsOfServiceURL": "https://shuffll.com/terms-of-use/",
@@ -23,6 +36,8 @@
       "Show my available video templates and capabilities.",
       "Create a campaign without starting generation.",
       "Show my campaign generation status and results."
-    ]
+    ],
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
   }
 }
