@@ -1,4 +1,4 @@
-# Shuffll Engage — Personalized video at scale
+# Shuffll Engage â€” Personalized video at scale
 
 Create personalized video campaigns based on customer interests, behaviors, and audience segments. Tailor content across customer journeys, including e-commerce and product videos, and integrate it into your existing workflows through a robust API and MCP.
 
@@ -28,6 +28,15 @@ gemini extensions install https://github.com/shuffll/shuffll-engage-agent-kit
 ```
 
 The root manifest bundles the hosted MCP connection, and `skills/` contains the workflow guidance. An available repository does not prove gallery indexing or authenticated operation.
+
+## GitHub Copilot plugin
+
+```sh
+copilot plugin marketplace add shuffll/shuffll-engage-agent-kit
+copilot plugin install shuffll-engage@shuffll-engage
+```
+
+The Copilot-specific legacy manifest in `.plugin/plugin.json` preserves version metadata and the MCP connection while the Google plugin uses its own minimal root manifest. Authenticated tool calls and inclusion in GitHub's curated catalog are separate checks.
 
 ## Google Antigravity plugin
 
@@ -63,7 +72,7 @@ A paid Shuffll subscription and organization-enabled API/MCP access are required
 
 The skill distinguishes previews, queued generation, completed media, and delivery. It preserves paired actor video/audio, keeps music beneath speech, and uses only verified native transitions available to the actual connection.
 
-[Documentation](https://api-docs.shuffll.com/engage) · [Website](https://engage.shuffll.com) · [Support](https://api-docs.shuffll.com/contact)
+[Documentation](https://api-docs.shuffll.com/engage) Â· [Website](https://engage.shuffll.com) Â· [Support](https://api-docs.shuffll.com/contact)
 
 Service use is subject to your Shuffll agreement and applicable [terms](https://shuffll.com/terms/) and [privacy policy](https://shuffll.com/privacy-policy/).
 
