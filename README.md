@@ -29,6 +29,14 @@ gemini extensions install https://github.com/shuffll/shuffll-engage-agent-kit
 
 The root manifest bundles the hosted MCP connection, and `skills/` contains the workflow guidance. An available repository does not prove gallery indexing or authenticated operation.
 
+## Google Antigravity plugin
+
+```sh
+agy plugin install https://github.com/shuffll/shuffll-engage-agent-kit
+```
+
+The root `plugin.json`, `mcp_config.json` and `skills/` follow the documented Antigravity plugin format. The connection uses its supported remote `serverUrl` field and dynamic OAuth registration. Authenticate the intended workspace in Antigravity before using the MCP. This provides a direct repository installation route; curated Marketplace approval and native authenticated operation are separate checks.
+
 ## Cursor
 
 The root `.cursor-plugin/plugin.json` bundles `skills/` and `mcp.json`. Use the repository with Cursor's plugin workflow. Official Cursor Marketplace review and client authentication are separate verification steps.
