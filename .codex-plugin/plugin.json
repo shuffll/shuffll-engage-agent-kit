@@ -1,6 +1,6 @@
 {
   "name": "shuffll-engage",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Authorized Shuffll Engage video campaigns, creative previews and results through its API and MCP.",
   "author": {
     "name": "Shuffll",
@@ -29,8 +29,8 @@
       "Write"
     ],
     "websiteURL": "https://engage.shuffll.com",
-    "privacyPolicyURL": "https://shuffll.com/privacy",
-    "termsOfServiceURL": "https://shuffll.com/terms-of-use/",
+    "privacyPolicyURL": "https://shuffll.com/privacy-policy/",
+    "termsOfServiceURL": "https://shuffll.com/terms/",
     "supportURL": "https://api-docs.shuffll.com/contact",
     "defaultPrompt": [
       "Show my available video templates and capabilities.",

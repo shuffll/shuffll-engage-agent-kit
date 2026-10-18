@@ -57,4 +57,8 @@ The skill distinguishes previews, queued generation, completed media, and delive
 
 [Documentation](https://api-docs.shuffll.com/engage) · [Website](https://engage.shuffll.com) · [Support](https://api-docs.shuffll.com/contact)
 
-Service use is subject to your Shuffll agreement and applicable [terms](https://shuffll.com/terms-of-use/) and [privacy policy](https://shuffll.com/privacy).
+Service use is subject to your Shuffll agreement and applicable [terms](https://shuffll.com/terms/) and [privacy policy](https://shuffll.com/privacy-policy/).
+
+## Package license
+
+The published agent-kit files are distributed under the [MIT License](LICENSE). Shuffll service access and API/MCP usage remain subject to your Shuffll agreement and applicable service terms. This license does not include Shuffll application source or grant service access.
