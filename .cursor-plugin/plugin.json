@@ -1,0 +1,11 @@
+{
+  "name": "shuffll-engage",
+  "version": "0.2.0",
+  "description": "Shuffll Engage video campaign workflows, creative previews and results through its API and MCP.",
+  "author": { "name": "Shuffll", "email": "contact@shuffll.com" },
+  "homepage": "https://engage.shuffll.com",
+  "repository": "https://github.com/shuffll/shuffll-engage-agent-kit",
+  "keywords": ["video", "campaigns", "personalization", "mcp", "skills"],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json"
+}

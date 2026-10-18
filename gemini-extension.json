@@ -1,0 +1,8 @@
+{
+  "name": "shuffll-engage",
+  "version": "0.2.0",
+  "description": "Shuffll Engage video campaign workflows and creative guidance through its API and MCP.",
+  "mcpServers": {
+    "shuffll-engage": { "httpUrl": "https://engage.shuffll.com/mcp" }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "shuffll-engage",
+  "owner": { "name": "Shuffll", "email": "contact@shuffll.com" },
+  "metadata": { "description": "Shuffll Engage MCP connection and video campaign skill" },
+  "plugins": [
+    { "name": "shuffll-engage", "source": "./", "description": "Shuffll Engage MCP and video campaign skill", "version": "0.2.0" }
+  ]
+}

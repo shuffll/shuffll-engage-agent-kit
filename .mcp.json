@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "shuffll-engage": { "type": "http", "url": "https://engage.shuffll.com/mcp" }
+  }
+}
