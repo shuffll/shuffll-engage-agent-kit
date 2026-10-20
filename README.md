@@ -79,3 +79,7 @@ Service use is subject to your Shuffll agreement and applicable [terms](https://
 ## Package license
 
 The published agent-kit files are distributed under the [MIT License](LICENSE). Shuffll service access and API/MCP usage remain subject to your Shuffll agreement and applicable service terms. This license does not include Shuffll application source or grant service access.
+
+## Research working drafts
+
+Isaac Gili, Founder of Shuffll, is developing two research working drafts on controlled product variants and vector-art attachment in video. Read the [drafts, evidence boundaries, and planned evaluations](research/video-personalization/README.md). These are early research documents; neither has been submitted to arXiv or peer reviewed.
