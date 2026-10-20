@@ -1,0 +1,4 @@
+policy,valid_outputs,base_evaluations,art_evaluations,text_evaluations,composite_evaluations,assumed_cost_units
+no_reuse,218,218,218,218,218,9439.4
+base_only,218,1,218,218,218,759.4
+dependency_reuse,218,1,16,109,218,246.4

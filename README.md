@@ -82,4 +82,4 @@ The published agent-kit files are distributed under the [MIT License](LICENSE). 
 
 ## Research working drafts
 
-Isaac Gili, Founder of Shuffll, is developing two research working drafts on controlled product variants and vector-art attachment in video. Read the [drafts, evidence boundaries, and planned evaluations](research/video-personalization/README.md). These are early research documents; neither has been submitted to arXiv or peer reviewed.
+Isaac Gili, Founder of Shuffll, is developing four technical manuscripts on video variant compilation, vector-art attachment, stochastic-video quality control, and failure-conditioned multimodel repair. Read the [manuscripts, PDFs, reproducible synthetic studies, and empirical protocol](research/video-personalization/README.md). The studies use constructed environments; the manuscripts have not been submitted to arXiv or peer reviewed.

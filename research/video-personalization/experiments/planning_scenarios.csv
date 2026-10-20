@@ -1,0 +1,7 @@
+evidence_type,scenario,method,requested_outputs,retry_cap,assumed_setup_cost,assumed_attempt_cost,assumed_acceptance_probability,expected_deliveries,expected_total_cost_units,ratio_expected_cost_to_expected_deliveries
+planning_assumption,reuse_unfavorable,reuse,400,3,400.0,0.8,0.85,398.65,775.2,1.9445628997867805
+planning_assumption,reuse_unfavorable,regenerate,400,3,0,1.0,0.9,399.6,443.99999999999994,1.111111111111111
+planning_assumption,moderate_reuse,reuse,400,3,100.0,0.3,0.9,399.6,233.2,0.5835835835835835
+planning_assumption,moderate_reuse,regenerate,400,3,0,1.5,0.75,393.75,787.5,2.0
+planning_assumption,reuse_favorable,reuse,400,3,40.0,0.1,0.95,399.95,82.1,0.20527565945743217
+planning_assumption,reuse_favorable,regenerate,400,3,0,2.0,0.6,374.4,1248.0,3.3333333333333335

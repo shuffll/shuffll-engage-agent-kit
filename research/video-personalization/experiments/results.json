@@ -1,0 +1,622 @@
+{
+  "schema_version": 1,
+  "experiment_version": "0.2",
+  "evidence_type": "synthetic_computation",
+  "warning": "Constructed environments; not production/video-model results.",
+  "variants": {
+    "evidence_type": "synthetic_computation",
+    "raw_assignments": 576,
+    "valid_assignments": 218,
+    "unique_art": 16,
+    "unique_text": 109,
+    "omitted_font_stale_outputs": 218,
+    "rows": [
+      {
+        "policy": "no_reuse",
+        "valid_outputs": 218,
+        "base_evaluations": 218,
+        "art_evaluations": 218,
+        "text_evaluations": 218,
+        "composite_evaluations": 218,
+        "assumed_cost_units": 9439.4
+      },
+      {
+        "policy": "base_only",
+        "valid_outputs": 218,
+        "base_evaluations": 1,
+        "art_evaluations": 218,
+        "text_evaluations": 218,
+        "composite_evaluations": 218,
+        "assumed_cost_units": 759.4
+      },
+      {
+        "policy": "dependency_reuse",
+        "valid_outputs": 218,
+        "base_evaluations": 1,
+        "art_evaluations": 16,
+        "text_evaluations": 109,
+        "composite_evaluations": 218,
+        "assumed_cost_units": 246.4
+      }
+    ]
+  },
+  "geometry": {
+    "evidence_type": "synthetic_computation",
+    "points_per_case": 4225,
+    "rows": [
+      {
+        "displacement": 0,
+        "opacity_error": 0.02,
+        "maximum_channel_error": 0.016995736030415043,
+        "mean_channel_error": 0.0055120178313280204,
+        "proven_upper_bound": 0.02,
+        "same_process_hash_equal": true
+      },
+      {
+        "displacement": 0.002,
+        "opacity_error": 0.02,
+        "maximum_channel_error": 0.018487944191097005,
+        "mean_channel_error": 0.0059851073044456735,
+        "proven_upper_bound": 0.028,
+        "same_process_hash_equal": true
+      },
+      {
+        "displacement": 0.01,
+        "opacity_error": 0.02,
+        "maximum_channel_error": 0.03709422619747438,
+        "mean_channel_error": 0.010627336849274183,
+        "proven_upper_bound": 0.06,
+        "same_process_hash_equal": true
+      },
+      {
+        "displacement": 0.04,
+        "opacity_error": 0.02,
+        "maximum_channel_error": 0.1205399607274329,
+        "mean_channel_error": 0.03169663811702028,
+        "proven_upper_bound": 0.18,
+        "same_process_hash_equal": true
+      }
+    ],
+    "discontinuous_edge_error": 1.0,
+    "evaluated_svg_renderer": false,
+    "evaluated_video_tracker": false
+  },
+  "qc": {
+    "evidence_type": "synthetic_computation",
+    "rows": [
+      {
+        "candidate_policies": 1,
+        "accepted_episodes": 50,
+        "observed_errors": 0,
+        "upper_error_rate": 0.058155079116972264,
+        "target": 0.02,
+        "certifies": false,
+        "zero_error_minimum_n": 149
+      },
+      {
+        "candidate_policies": 1,
+        "accepted_episodes": 100,
+        "observed_errors": 0,
+        "upper_error_rate": 0.029513049607039932,
+        "target": 0.02,
+        "certifies": false,
+        "zero_error_minimum_n": 149
+      },
+      {
+        "candidate_policies": 1,
+        "accepted_episodes": 200,
+        "observed_errors": 0,
+        "upper_error_rate": 0.014867039231272059,
+        "target": 0.02,
+        "certifies": true,
+        "zero_error_minimum_n": 149
+      },
+      {
+        "candidate_policies": 1,
+        "accepted_episodes": 500,
+        "observed_errors": 0,
+        "upper_error_rate": 0.005973551516349559,
+        "target": 0.02,
+        "certifies": true,
+        "zero_error_minimum_n": 149
+      },
+      {
+        "candidate_policies": 10,
+        "accepted_episodes": 50,
+        "observed_errors": 0,
+        "upper_error_rate": 0.10054508337476262,
+        "target": 0.02,
+        "certifies": false,
+        "zero_error_minimum_n": 263
+      },
+      {
+        "candidate_policies": 10,
+        "accepted_episodes": 100,
+        "observed_errors": 0,
+        "upper_error_rate": 0.051604029624104,
+        "target": 0.02,
+        "certifies": false,
+        "zero_error_minimum_n": 263
+      },
+      {
+        "candidate_policies": 10,
+        "accepted_episodes": 200,
+        "observed_errors": 0,
+        "upper_error_rate": 0.026143762983521272,
+        "target": 0.02,
+        "certifies": false,
+        "zero_error_minimum_n": 263
+      },
+      {
+        "candidate_policies": 10,
+        "accepted_episodes": 500,
+        "observed_errors": 0,
+        "upper_error_rate": 0.010540688188675817,
+        "target": 0.02,
+        "certifies": true,
+        "zero_error_minimum_n": 263
+      },
+      {
+        "candidate_policies": 100,
+        "accepted_episodes": 50,
+        "observed_errors": 0,
+        "upper_error_rate": 0.14102722316236949,
+        "target": 0.02,
+        "certifies": false,
+        "zero_error_minimum_n": 377
+      },
+      {
+        "candidate_policies": 100,
+        "accepted_episodes": 100,
+        "observed_errors": 0,
+        "upper_error_rate": 0.07319215754417005,
+        "target": 0.02,
+        "certifies": false,
+        "zero_error_minimum_n": 377
+      },
+      {
+        "candidate_policies": 100,
+        "accepted_episodes": 200,
+        "observed_errors": 0,
+        "upper_error_rate": 0.03729140314639863,
+        "target": 0.02,
+        "certifies": false,
+        "zero_error_minimum_n": 377
+      },
+      {
+        "candidate_policies": 100,
+        "accepted_episodes": 500,
+        "observed_errors": 0,
+        "upper_error_rate": 0.015086840774094203,
+        "target": 0.02,
+        "certifies": true,
+        "zero_error_minimum_n": 377
+      }
+    ],
+    "exact_coverage_cases": [
+      {
+        "n": 10,
+        "true_error_rate": 0.01,
+        "exact_undercoverage_probability": 0
+      },
+      {
+        "n": 10,
+        "true_error_rate": 0.02,
+        "exact_undercoverage_probability": 0
+      },
+      {
+        "n": 10,
+        "true_error_rate": 0.05,
+        "exact_undercoverage_probability": 0
+      },
+      {
+        "n": 10,
+        "true_error_rate": 0.1,
+        "exact_undercoverage_probability": 0
+      },
+      {
+        "n": 10,
+        "true_error_rate": 0.3,
+        "exact_undercoverage_probability": 0.02824752489999998
+      },
+      {
+        "n": 10,
+        "true_error_rate": 0.7,
+        "exact_undercoverage_probability": 0.04734898740000004
+      },
+      {
+        "n": 30,
+        "true_error_rate": 0.01,
+        "exact_undercoverage_probability": 0
+      },
+      {
+        "n": 30,
+        "true_error_rate": 0.02,
+        "exact_undercoverage_probability": 0
+      },
+      {
+        "n": 30,
+        "true_error_rate": 0.05,
+        "exact_undercoverage_probability": 0
+      },
+      {
+        "n": 30,
+        "true_error_rate": 0.1,
+        "exact_undercoverage_probability": 0.04239115827521624
+      },
+      {
+        "n": 30,
+        "true_error_rate": 0.3,
+        "exact_undercoverage_probability": 0.030154943102089285
+      },
+      {
+        "n": 30,
+        "true_error_rate": 0.7,
+        "exact_undercoverage_probability": 0.04005254768213139
+      },
+      {
+        "n": 100,
+        "true_error_rate": 0.01,
+        "exact_undercoverage_probability": 0
+      },
+      {
+        "n": 100,
+        "true_error_rate": 0.02,
+        "exact_undercoverage_probability": 0
+      },
+      {
+        "n": 100,
+        "true_error_rate": 0.05,
+        "exact_undercoverage_probability": 0.037081209327355036
+      },
+      {
+        "n": 100,
+        "true_error_rate": 0.1,
+        "exact_undercoverage_probability": 0.023711082663476823
+      },
+      {
+        "n": 100,
+        "true_error_rate": 0.3,
+        "exact_undercoverage_probability": 0.04786573864827388
+      },
+      {
+        "n": 100,
+        "true_error_rate": 0.7,
+        "exact_undercoverage_probability": 0.033978998268931394
+      }
+    ],
+    "independent_policy_search_false_pass_example": 0.6415140775914581,
+    "predicted_video_performance": false
+  },
+  "routing": {
+    "evidence_type": "synthetic_computation",
+    "assumptions": {
+      "cheap_quick": {
+        "cost": 1,
+        "g": [
+          0.55,
+          0.85
+        ],
+        "s": [
+          0.9,
+          0.98
+        ],
+        "f": [
+          0.08,
+          0.15
+        ]
+      },
+      "cheap_strict": {
+        "cost": 2,
+        "g": [
+          0.55,
+          0.85
+        ],
+        "s": [
+          0.7,
+          0.9
+        ],
+        "f": [
+          0.005,
+          0.02
+        ]
+      },
+      "strong_quick": {
+        "cost": 3,
+        "g": [
+          0.8,
+          0.95
+        ],
+        "s": [
+          0.9,
+          0.98
+        ],
+        "f": [
+          0.08,
+          0.15
+        ]
+      },
+      "strong_strict": {
+        "cost": 4,
+        "g": [
+          0.8,
+          0.95
+        ],
+        "s": [
+          0.7,
+          0.9
+        ],
+        "f": [
+          0.005,
+          0.02
+        ]
+      }
+    },
+    "horizon": 3,
+    "hard_budget": 6,
+    "accepted_defect_limit": 0.03,
+    "defect_penalty": 10,
+    "cost_weight": 0.02,
+    "rows": [
+      {
+        "policy": "fixed_cheap_quick",
+        "environment": "nominal",
+        "initial_action": "cheap_quick",
+        "good_delivery_probability": 0.9225530125,
+        "bad_delivery_probability": 0.04837094062500001,
+        "accepted_defect_fraction": 0.04981949458483756,
+        "expected_cost_units": 1.4020562500000002,
+        "utility": 0.41080248124999985
+      },
+      {
+        "policy": "fixed_cheap_quick",
+        "environment": "adversarial",
+        "initial_action": "cheap_quick",
+        "good_delivery_probability": 0.80630859375,
+        "bad_delivery_probability": 0.10995117187499998,
+        "accepted_defect_fraction": 0.11999999999999997,
+        "expected_cost_units": 1.62890625,
+        "utility": -0.3257812499999997
+      },
+      {
+        "policy": "fixed_strong_strict",
+        "environment": "nominal",
+        "initial_action": "strong_strict",
+        "good_delivery_probability": 0.7000000000000001,
+        "bad_delivery_probability": 0.0015625,
+        "accepted_defect_fraction": 0.0022271714922048997,
+        "expected_cost_units": 4.0,
+        "utility": 0.6043750000000001
+      },
+      {
+        "policy": "fixed_strong_strict",
+        "environment": "adversarial",
+        "initial_action": "strong_strict",
+        "good_delivery_probability": 0.5599999999999999,
+        "bad_delivery_probability": 0.003999999999999999,
+        "accepted_defect_fraction": 0.007092198581560283,
+        "expected_cost_units": 4.0,
+        "utility": 0.4399999999999999
+      },
+      {
+        "policy": "nominal_dp",
+        "environment": "nominal",
+        "initial_action": "cheap_strict",
+        "good_delivery_probability": 0.910875875,
+        "bad_delivery_probability": 0.006099615234375002,
+        "accepted_defect_fraction": 0.006651884700665191,
+        "expected_cost_units": 3.2531281250000004,
+        "utility": 0.78481716015625
+      },
+      {
+        "policy": "nominal_dp",
+        "environment": "adversarial",
+        "initial_action": "cheap_strict",
+        "good_delivery_probability": 0.75969586,
+        "bad_delivery_probability": 0.017759123999999998,
+        "accepted_defect_fraction": 0.022842639593908625,
+        "expected_cost_units": 3.946472,
+        "utility": 0.5031751799999999
+      },
+      {
+        "policy": "robust_shielded_dp",
+        "environment": "nominal",
+        "initial_action": "strong_strict",
+        "good_delivery_probability": 0.867125,
+        "bad_delivery_probability": 0.002681640625,
+        "accepted_defect_fraction": 0.0030830307562070415,
+        "expected_cost_units": 4.596875,
+        "utility": 0.74837109375
+      },
+      {
+        "policy": "robust_shielded_dp",
+        "environment": "adversarial",
+        "initial_action": "strong_strict",
+        "good_delivery_probability": 0.72786,
+        "bad_delivery_probability": 0.007924,
+        "accepted_defect_fraction": 0.0107694649516706,
+        "expected_cost_units": 4.872,
+        "utility": 0.55118
+      }
+    ],
+    "enumerated_feasible_sequences": 7,
+    "evaluated_actual_model_routing": false
+  },
+  "failure_conditioning": {
+    "evidence_type": "synthetic_computation",
+    "labels": [
+      "motion",
+      "artwork",
+      "speech"
+    ],
+    "actions": {
+      "regenerate": {
+        "cost": 4,
+        "resolve": [
+          0.85,
+          0.65,
+          0.45
+        ],
+        "collateral": 0.04
+      },
+      "repair_motion": {
+        "cost": 3,
+        "resolve": [
+          0.88,
+          0.15,
+          0.05
+        ],
+        "collateral": 0.03
+      },
+      "repair_artwork": {
+        "cost": 1,
+        "resolve": [
+          0.05,
+          0.97,
+          0.02
+        ],
+        "collateral": 0.005
+      },
+      "repair_speech": {
+        "cost": 1,
+        "resolve": [
+          0.03,
+          0.02,
+          0.96
+        ],
+        "collateral": 0.01
+      }
+    },
+    "policies": {
+      "global_fixed": [
+        "regenerate",
+        "regenerate",
+        "regenerate"
+      ],
+      "nominal_diagnosis": [
+        "repair_motion",
+        "repair_artwork",
+        "repair_speech"
+      ],
+      "robust_diagnosis": [
+        "regenerate",
+        "repair_artwork",
+        "repair_speech"
+      ]
+    },
+    "rows": [
+      {
+        "policy": "global_fixed",
+        "actual_diagnosis_accuracy": 0.4,
+        "good_after_one_action": 0.624,
+        "mean_cost_units": 4.0,
+        "utility": 0.384
+      },
+      {
+        "policy": "global_fixed",
+        "actual_diagnosis_accuracy": 0.6,
+        "good_after_one_action": 0.624,
+        "mean_cost_units": 4.0,
+        "utility": 0.384
+      },
+      {
+        "policy": "global_fixed",
+        "actual_diagnosis_accuracy": 0.85,
+        "good_after_one_action": 0.624,
+        "mean_cost_units": 4.0,
+        "utility": 0.384
+      },
+      {
+        "policy": "global_fixed",
+        "actual_diagnosis_accuracy": 0.95,
+        "good_after_one_action": 0.624,
+        "mean_cost_units": 4.0,
+        "utility": 0.384
+      },
+      {
+        "policy": "nominal_diagnosis",
+        "actual_diagnosis_accuracy": 0.4,
+        "good_after_one_action": 0.40053500000000003,
+        "mean_cost_units": 1.6666666666666667,
+        "utility": 0.300535
+      },
+      {
+        "policy": "nominal_diagnosis",
+        "actual_diagnosis_accuracy": 0.6,
+        "good_after_one_action": 0.5747066666666667,
+        "mean_cost_units": 1.6666666666666667,
+        "utility": 0.4747066666666667
+      },
+      {
+        "policy": "nominal_diagnosis",
+        "actual_diagnosis_accuracy": 0.85,
+        "good_after_one_action": 0.79242125,
+        "mean_cost_units": 1.6666666666666667,
+        "utility": 0.69242125
+      },
+      {
+        "policy": "nominal_diagnosis",
+        "actual_diagnosis_accuracy": 0.95,
+        "good_after_one_action": 0.8795070833333334,
+        "mean_cost_units": 1.6666666666666667,
+        "utility": 0.7795070833333334
+      },
+      {
+        "policy": "robust_diagnosis",
+        "actual_diagnosis_accuracy": 0.4,
+        "good_after_one_action": 0.48172166666666666,
+        "mean_cost_units": 2.0,
+        "utility": 0.36172166666666666
+      },
+      {
+        "policy": "robust_diagnosis",
+        "actual_diagnosis_accuracy": 0.6,
+        "good_after_one_action": 0.6246533333333333,
+        "mean_cost_units": 2.0,
+        "utility": 0.5046533333333333
+      },
+      {
+        "policy": "robust_diagnosis",
+        "actual_diagnosis_accuracy": 0.85,
+        "good_after_one_action": 0.8033179166666665,
+        "mean_cost_units": 2.0,
+        "utility": 0.6833179166666665
+      },
+      {
+        "policy": "robust_diagnosis",
+        "actual_diagnosis_accuracy": 0.95,
+        "good_after_one_action": 0.8747837500000001,
+        "mean_cost_units": 2.0,
+        "utility": 0.7547837500000001
+      }
+    ],
+    "diagnostic_nominal": 0.85,
+    "diagnostic_uncertainty": [
+      0.6,
+      0.9
+    ],
+    "provider_measurements": false
+  },
+  "verification": {
+    "assertions_passed": 521,
+    "unique_checks": [
+      "E1 complete-key output matches oracle",
+      "E1 exact constrained enumeration agrees",
+      "E1 no duplicate assignments",
+      "E1 omitted-font counterexample affects every output",
+      "E2 discontinuous-edge counterexample",
+      "E2 same-process numerical repeatability",
+      "E2 smooth-field error bound",
+      "E3 CP zero-error closed form",
+      "E3 all-error bound is one",
+      "E3 exact undercoverage <= delta",
+      "E3 no-data bound is vacuous",
+      "E4 hard budget invariant",
+      "E4 reachable/unreachable state shield",
+      "E4 robust DP matches exhaustive sequence oracle",
+      "E4 robust recursion agrees with independent policy evaluation",
+      "E4 shielded accepted-defect guarantee",
+      "E5 diagnosis policy matches exhaustive 64-policy oracle"
+    ]
+  }
+}
