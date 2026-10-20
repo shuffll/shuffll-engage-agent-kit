@@ -7,8 +7,8 @@ These working drafts investigate reusable video personalization and vector-art c
 
 | Working draft | Research question |
 |---|---|
-| [Many Products, One Video Template](product-permutations.md) | How can valid product, artwork, and offer combinations share preparation while preserving correctness? |
-| [Deterministic Vector-Art Attachment in Generated Video](vector-art-attachment.md) | How can prepared attachment instructions be reused while preserving approved artwork and controlling render cost? |
+| [Many Products, One Video Template](product-permutations.md) · [PDF](shuffll-product-permutations-working-draft.pdf) | How can valid product, artwork, and offer combinations share preparation while preserving correctness? |
+| [Deterministic Vector-Art Attachment in Generated Video](vector-art-attachment.md) · [PDF](shuffll-vector-art-attachment-working-draft.pdf) | How can prepared attachment instructions be reused while preserving approved artwork and controlling render cost? |
 
 ## Current evidence
 
