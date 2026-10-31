@@ -1,0 +1,153 @@
+{
+  "name": "Shuffll Engage - Create a campaign without rendering",
+  "nodes": [
+    {
+      "id": "3cba784e-b789-4014-8094-9302a3449625",
+      "name": "Setup and limitations",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        40,
+        -380
+      ],
+      "parameters": {
+        "content": "## Create a campaign draft\n\nConfigure a private **Templated Custom Auth** credential on every HTTP node. Template: `{\"headers\":{\"Authorization\":\"Bearer {{api_key}}\"}}`. Store your workspace-scoped key only in the credential secret field. A paid Shuffll subscription and enabled API access are required.\n\nRequires `campaigns:write`. Replace every input before running. Select an authorized immutable template version reporting `render_source_status: ready` and supported `flat-video-v1` content. Choose a unique `idempotencyKey` per intended campaign; retain that key for uncertain retries. This performs a write but does not add recipients, render, export or send. The response is an operation job: queued/running is not success. Follow its job ID with the jobs API until terminal and inspect the result. Fixed-video campaigns do not personalize video from contact fields.",
+        "height": 330,
+        "width": 700,
+        "color": 5
+      }
+    },
+    {
+      "id": "7cb0df7e-3e00-46b3-aabf-a8c83ccedcb5",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "02b122f4-5684-4a8c-9536-13075f316ada",
+      "name": "Campaign inputs",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "46f72fe4-ccad-4d6c-a077-db52fcc33c31",
+              "name": "organizationId",
+              "value": "REPLACE_WITH_ORGANIZATION_UUID",
+              "type": "string"
+            },
+            {
+              "id": "5e4824bd-e817-4c24-8d28-d6662e7ec52c",
+              "name": "templateId",
+              "value": "REPLACE_WITH_TEMPLATE_UUID",
+              "type": "string"
+            },
+            {
+              "id": "e43a29b0-52ef-4bb9-ba56-fd5ced97dbd4",
+              "name": "templateVersionId",
+              "value": "REPLACE_WITH_READY_VERSION_UUID",
+              "type": "string"
+            },
+            {
+              "id": "b4d7010d-74bd-4b4c-b91b-e42e88c126d8",
+              "name": "campaignName",
+              "value": "My video campaign",
+              "type": "string"
+            },
+            {
+              "id": "f2733cba-18da-41f3-967b-946ba2da2b57",
+              "name": "idempotencyKey",
+              "value": "REPLACE_WITH_A_UNIQUE_KEY_FOR_THIS_CAMPAIGN",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "c7d192c5-7b9f-43fe-80dd-76986f7a1524",
+      "name": "Submit draft campaign",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        540,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://engage.shuffll.com/api/v1/campaigns",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpTemplatedCustomAuth",
+        "options": {
+          "timeout": 30000,
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          },
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Idempotency-Key",
+              "value": "={{ $json.idempotencyKey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({organization_id: $json.organizationId, template_id: $json.templateId, template_version_id: $json.templateVersionId, name: $json.campaignName}) }}"
+      }
+    }
+  ],
+  "connections": {
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Campaign inputs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campaign inputs": {
+      "main": [
+        [
+          {
+            "node": "Submit draft campaign",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "none",
+    "saveDataErrorExecution": "none",
+    "saveManualExecutions": false
+  },
+  "pinData": {},
+  "tags": []
+}

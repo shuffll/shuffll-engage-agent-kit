@@ -1,0 +1,132 @@
+{
+  "name": "Shuffll Engage - Discover video templates",
+  "nodes": [
+    {
+      "id": "102528fc-5d05-4548-aa08-9889c2e74203",
+      "name": "Setup and limitations",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        40,
+        -380
+      ],
+      "parameters": {
+        "content": "## Discover your video templates\n\nConfigure a private **Templated Custom Auth** credential on every HTTP node. Template: `{\"headers\":{\"Authorization\":\"Bearer {{api_key}}\"}}`. Store your workspace-scoped key only in the credential secret field. A paid Shuffll subscription and enabled API access are required.\n\nRead-only. Inspect capabilities before using downstream operations. Lists the first 50 templates; a non-null `nextCursor` means there are more. Add a `cursor` query parameter with that exact value and rerun the list node to continue. Template presence does not establish render readiness. Inspect the selected published version before creating a campaign.",
+        "height": 330,
+        "width": 700,
+        "color": 5
+      }
+    },
+    {
+      "id": "5a775a22-655d-4596-8abd-521ad952c7ca",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "a03e343c-b594-49b8-8d21-4b057752ed2f",
+      "name": "Inspect workspace capabilities",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "https://engage.shuffll.com/api/v1/capabilities",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpTemplatedCustomAuth",
+        "options": {
+          "timeout": 30000,
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          },
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "464f906b-1c28-444b-aafd-2243021805e3",
+      "name": "List templates - first page",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "https://engage.shuffll.com/api/v1/templates",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpTemplatedCustomAuth",
+        "options": {
+          "timeout": 30000,
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          },
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        },
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "limit",
+              "value": "50"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Inspect workspace capabilities",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inspect workspace capabilities": {
+      "main": [
+        [
+          {
+            "node": "List templates - first page",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "none",
+    "saveDataErrorExecution": "none",
+    "saveManualExecutions": false
+  },
+  "pinData": {},
+  "tags": []
+}
