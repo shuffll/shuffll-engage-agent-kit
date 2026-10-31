@@ -1,5 +1,5 @@
 {
-  "name": "Shuffll Engage - Review campaign readiness and video results",
+  "name": "Shuffll Engage - Review a saved creation brief",
   "nodes": [
     {
       "id": "2c37d2ea-cfd7-4189-95bb-d4d9286e7d16",
@@ -11,7 +11,7 @@
         -380
       ],
       "parameters": {
-        "content": "## Review an existing video campaign\n\nConfigure a private **Templated Custom Auth** credential on every HTTP node. Template: `{\"headers\":{\"Authorization\":\"Bearer {{api_key}}\"}}`. Store your workspace-scoped key only in the credential secret field. A paid Shuffll subscription and enabled API access are required.\n\nSet `campaignId` to an accessible campaign UUID. Requires `campaigns:read` and `results:read`. Read-only: no generation or sending. Inspect each node output; readiness and render results are different. Lists up to 50 results; continue with the returned `nextCursor` as a `cursor` query parameter. Returned URLs can be private media links: share them only with authorized recipients. Rendered media does not establish message delivery or engagement.",
+        "content": "## Review a saved creation brief\n\nSelect a private **Bearer Auth** credential containing your organization-scoped Engage API key on every HTTP node. Requires `templates:read`. Enter your organizationId and an owned journeyId.\n\nThe workflow lists the first 50 saved briefs, then reads the selected brief and its checkpoint state. Use nextCursor to page further. It does not generate, export, activate or send media.",
         "height": 330,
         "width": 700,
         "color": 5
@@ -30,7 +30,7 @@
     },
     {
       "id": "313c5f93-195c-4204-84cc-28068f6a5c0f",
-      "name": "Campaign inputs",
+      "name": "Brief inputs",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
@@ -41,9 +41,15 @@
         "assignments": {
           "assignments": [
             {
-              "id": "d43596ed-4c48-4f14-a577-2c75658908e7",
-              "name": "campaignId",
-              "value": "REPLACE_WITH_CAMPAIGN_UUID",
+              "id": "5d5d1f43-dc65-4ae5-bf96-9ed637308fbc",
+              "name": "organizationId",
+              "value": "REPLACE_WITH_ORGANIZATION_UUID",
+              "type": "string"
+            },
+            {
+              "id": "45d2e3d5-aaed-421a-8edd-34d44b6e4028",
+              "name": "journeyId",
+              "value": "REPLACE_WITH_OWNED_JOURNEY_UUID",
               "type": "string"
             }
           ]
@@ -53,7 +59,7 @@
     },
     {
       "id": "d2c48c6b-3655-4413-962f-b0cca6e2e7d2",
-      "name": "Check campaign readiness",
+      "name": "List saved briefs - first page",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -62,9 +68,9 @@
       ],
       "parameters": {
         "method": "GET",
-        "url": "={{ 'https://engage.shuffll.com/api/v1/campaigns/' + encodeURIComponent($('Campaign inputs').first().json.campaignId) + '/validate' }}",
+        "url": "={{ 'https://engage.shuffll.com/api/v1/journeys?organization_id=' + encodeURIComponent($('Brief inputs').first().json.organizationId) + '&limit=50' }}",
         "authentication": "genericCredentialType",
-        "genericAuthType": "httpTemplatedCustomAuth",
+        "genericAuthType": "httpBearerAuth",
         "options": {
           "timeout": 30000,
           "redirect": {
@@ -82,7 +88,7 @@
     },
     {
       "id": "e03c8da3-83a5-437f-8787-282ef83b71c2",
-      "name": "Read video results - first page",
+      "name": "Read selected creation brief",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
@@ -91,9 +97,9 @@
       ],
       "parameters": {
         "method": "GET",
-        "url": "={{ 'https://engage.shuffll.com/api/v1/campaigns/' + encodeURIComponent($('Campaign inputs').first().json.campaignId) + '/results' }}",
+        "url": "={{ 'https://engage.shuffll.com/api/v1/journeys/' + encodeURIComponent($('Brief inputs').first().json.journeyId) }}",
         "authentication": "genericCredentialType",
-        "genericAuthType": "httpTemplatedCustomAuth",
+        "genericAuthType": "httpBearerAuth",
         "options": {
           "timeout": 30000,
           "redirect": {
@@ -106,15 +112,6 @@
               "responseFormat": "json"
             }
           }
-        },
-        "sendQuery": true,
-        "queryParameters": {
-          "parameters": [
-            {
-              "name": "limit",
-              "value": "50"
-            }
-          ]
         }
       }
     }
@@ -124,29 +121,29 @@
       "main": [
         [
           {
-            "node": "Campaign inputs",
+            "node": "Brief inputs",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Campaign inputs": {
+    "Brief inputs": {
       "main": [
         [
           {
-            "node": "Check campaign readiness",
+            "node": "List saved briefs - first page",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Check campaign readiness": {
+    "List saved briefs - first page": {
       "main": [
         [
           {
-            "node": "Read video results - first page",
+            "node": "Read selected creation brief",
             "type": "main",
             "index": 0
           }

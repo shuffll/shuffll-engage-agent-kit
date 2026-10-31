@@ -11,7 +11,7 @@
         -380
       ],
       "parameters": {
-        "content": "## Discover your video templates\n\nConfigure a private **Templated Custom Auth** credential on every HTTP node. Template: `{\"headers\":{\"Authorization\":\"Bearer {{api_key}}\"}}`. Store your workspace-scoped key only in the credential secret field. A paid Shuffll subscription and enabled API access are required.\n\nRead-only. Inspect capabilities before using downstream operations. Lists the first 50 templates; a non-null `nextCursor` means there are more. Add a `cursor` query parameter with that exact value and rerun the list node to continue. Template presence does not establish render readiness. Inspect the selected published version before creating a campaign.",
+        "content": "## Discover Engage templates\n\nSelect a private **Bearer Auth** credential containing your organization-scoped Engage API key on every HTTP node. Requires `templates:read`.\n\nRead capabilities, then list the first 50 published templates. An empty list is valid in a new review workspace. Use nextCursor to page further. Published template metadata does not imply a render-ready source. No generation or sending occurs.",
         "height": 330,
         "width": 700,
         "color": 5
@@ -41,7 +41,7 @@
         "method": "GET",
         "url": "https://engage.shuffll.com/api/v1/capabilities",
         "authentication": "genericCredentialType",
-        "genericAuthType": "httpTemplatedCustomAuth",
+        "genericAuthType": "httpBearerAuth",
         "options": {
           "timeout": 30000,
           "redirect": {
@@ -70,7 +70,7 @@
         "method": "GET",
         "url": "https://engage.shuffll.com/api/v1/templates",
         "authentication": "genericCredentialType",
-        "genericAuthType": "httpTemplatedCustomAuth",
+        "genericAuthType": "httpBearerAuth",
         "options": {
           "timeout": 30000,
           "redirect": {
